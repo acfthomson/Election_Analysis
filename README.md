@@ -19,18 +19,25 @@ The Colorado Board of Elections requested to find the following:
 7. Determine the county with the largest voter turnout
 8. Determine the winner of the election based on popular vote
 
-### Election Audit Results
-    - There were 369,711 votes cast in this local congressional election
-    - The candidates were:
-        - Charles Casper Stockham
-        - Diana DeGette
-        - Raymon Anthony Doane
-    - The candidate results were:
-        - Charles Casper Stockham received 85,213 (23.0%) votes
-        - Diana DeGette received 272,892 (73.8%) votes
-        - Raymon Anthony Doane received 11,606 (3.1%) votes
-    - The winner of this elections was:
-        - Diana Degette
+### Election Results
+    - Total Votes: 369,711
+
+    - County Votes:
+        - Jefferson: 10.5% (38,855)
+        - Denver: 82.8% (306,055)
+        - Arapahoe: 6.7% (24,801)
+
+    - Largest Turnout: Denver
+
+    - Vote Total By Candidate:
+        - Charles Casper Stockham: 23.0% (85,213)
+        - Diana DeGette: 73.8% (272,892)
+        - Raymon Anthony Doane: 3.1% (11,606)
+
+    - Winner: Diana DeGette
+    - Winning Vote Count: 272,892
+    - Winning Percentage: 73.8%
+
 
 ### Election Audit Summary
 It is recommended that the Colorado Board of Elections maintain this script for future use so that it can be refactored for future elections, which could have different candidates or different counties.
