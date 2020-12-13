@@ -169,4 +169,33 @@ This part of the code saves the county with the largest voter turnout, final can
 
 
 ### Election Audit Summary
-It is recommended that the Colorado Board of Elections maintain this script for future use so that it can be refactored for future elections, which could have different candidates or different counties.
+It is recommended that the Colorado Board of Elections maintain this script for future use so that it can be refactored for future elections, which could have different candidates or different counties.  It should be noted that this script will only execute against a CSV and not an Excel spreadsheet (.xlsx).
+
+This script is written to execute against this particular CSV, so if candidate names and county names are in a different column, lines 56 and 59 in [PyPoll_Challenge.py](https://github.com/acfthomson/Election_Analysis/blob/main/PyPoll_Challenge.py)
+will need to be modified:
+```python
+# Get the candidate name from each row
+        candidate_name = row[2]
+
+        # 3: Extract the county name from each row
+        county_name = row[1]
+```
+
+This script is written to output the winning candidate, winning vote count, and winning percentage.  If the Colorado Board of Elections wants to show the losing candidate, losing vote count, and losing percentage, the lines of code shown below will need to be modified.  
+```python
+        # Determine winning vote count, winning percentage, and candidate
+        if (votes > winning_count) and (vote_percentage > winning_percentage):
+            winning_count = votes
+            winning_candidate = candidate_name
+            winning_percentage = vote_percentage
+
+    # Print the winning candidate (to terminal)
+    winning_candidate_summary = (
+        f"-------------------------\n"
+        f"Winner: {winning_candidate}\n"
+        f"Winning Vote Count: {winning_count:,}\n"
+        f"Winning Percentage: {winning_percentage:.1f}%\n"
+        f"-------------------------\n"
+    )
+    print(winning_candidate_summary)
+```
